@@ -13,6 +13,9 @@ lib-cov
 # Code editor backups
 *~
 
+# Compiled CSS
+*.css
+
 # Coverage directory used by tools like istanbul
 coverage
 
