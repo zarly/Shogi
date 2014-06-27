@@ -1,0 +1,7 @@
+mixin Board(config)
+	div.Widget.Board
+		div.Board-cells
+			- for (var x = 0; x < config.sizeX; x++)
+				div.Board-line
+					- for (var y = 0; y < config.sizeY; y++)
+						include cell

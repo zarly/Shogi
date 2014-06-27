@@ -1,0 +1,33 @@
+
+@boardPadding: 15px;
+@boardBorderWidth: 1px;
+@boardBorderCellsWidth: 1px;
+@boardCellsWidth: @cellWidth * @cellCountX + 2 * @boardBorderCellsWidth;
+@boardCellsHeight: @cellHeight * @cellCountY + 2 * @boardBorderCellsWidth;
+
+.Widget.Board {
+	border: @boardBorderWidth solid #000;
+	padding: @boardPadding;
+	width: @boardCellsWidth + (@boardPadding + @boardBorderWidth) * 2;
+	height: @boardCellsHeight + (@boardPadding + @boardBorderWidth) * 2;
+
+	.Board-cells {
+		border: @boardBorderCellsWidth solid @cellColorDark;
+		width: @boardCellsWidth;
+		height: @boardCellsHeight;
+	}
+
+	.Board-line {
+		clear: both;
+
+		&:nth-child(even) .Widget.Cell:nth-child(even),
+		&:nth-child(odd) .Widget.Cell:nth-child(odd) {
+			background: @cellColorLight;
+		}
+
+		&:nth-child(odd) .Widget.Cell:nth-child(even),
+		&:nth-child(even) .Widget.Cell:nth-child(odd) {
+			background: @cellColorDark;
+		}
+	}
+}
